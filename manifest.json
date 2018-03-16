@@ -17,7 +17,6 @@
     }
   },
   "kiosk_enabled": true,
-"kiosk_only": true,
   "bluetooth": {
     "low_energy": true,
     "peripheral": true
