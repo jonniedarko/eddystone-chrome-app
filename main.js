@@ -33,6 +33,7 @@
 
   let update_button = document.querySelector('#update-button');
   let stop_button = document.querySelector('#stop-button');
+  let console_mirror = document.querySelector('#console-mirror');
 
 
   frame_type_dropdown.addEventListener('change', event => {
@@ -81,7 +82,6 @@
       current_advertisement.unregisterAdvertisement()
         .then(() => {
           current_advertisement = undefined;
-          result_toast.duration = 3;
           showResult('Not advertising.');
         });
     }
@@ -136,6 +136,7 @@
       .then(adv => current_advertisement = adv);
   }
   function showResult(message) {
+    console_mirror.value = message;
     console.log("message", message)
   }
 })();

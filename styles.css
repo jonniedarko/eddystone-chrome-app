@@ -39,3 +39,7 @@ paper-input {
 #stop-button {
   background-color: #db4437;
 }
+
+#console-mirror{
+  width:500px;
+}
