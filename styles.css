@@ -7,15 +7,15 @@ body {
 }
 
 #frame-type-fields {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+
   align-items: center;
   justify-content: center;
 }
 
 #url-fields {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+
 }
 
 paper-input {
@@ -23,41 +23,19 @@ paper-input {
 }
 
 #uid-fields {
-  display: flex;
-  flex-direction: row;
+  display: none;
 }
 
-#url-prefix-dropdown {
-  flex: 1;
-}
-#url {
-  flex: 4;
-}
-#adv-tx-power-url, #adv-tx-power-uid {
-  flex: 1;
-}
-
-#namespace {
-  flex: 2;
-}
-#instance {
-  flex: 1.2;
-}
 
 #buttons {
-  display: flex;
-  flex-direction: row-reverse;
+  display: inline-block;
+  margin: 20px;
+  padding:10px;
 }
-paper-button {
-  color: #fff;
-}
+
 #update-button {
   background-color: #4285f4;
 }
 #stop-button {
   background-color: #db4437;
-}
-
-#close-toast {
-  color: #db4437;
 }

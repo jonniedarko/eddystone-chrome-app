@@ -15,21 +15,16 @@
 </head>
 
 <body unresolved>
+
+  <div id="frame-type-fields">
   <select class="" name="" id="frame-type">
     <option>url</>
       <option>uid</>
   </select>
   <br/>
   <br/>
-<!--  <div id="frame-type-fields">
-    <paper-dropdown-menu label="Eddystone Frame Type" id="frame-type-dropdown">
-      <paper-menu class="dropdown-content" id="frame-type">
-        <paper-item>URL</paper-item>
-        <paper-item>UID</paper-item>
-      </paper-menu>
-    </paper-dropdown-menu>
-  </div>-->
-
+</div>
+<div id="url-fields">
   <select id="url-prefix" class="" name="">
     <option>https://</option>
       <option>http://</option>
@@ -37,67 +32,34 @@
   <br/>
   <br/>
 
-
-
-<!--  <div id="url-fields">
-    <paper-dropdown-menu label="URL Prefix" id="url-prefix-dropdown" hidden>
-      <paper-menu class="dropdown-content" id="url-prefix" selected="0">
-        <paper-item>https://</paper-item>
-        <paper-item>http://</paper-item>
-      </paper-menu>
-    </paper-dropdown-menu>-->
-
     <label>URL</label><input type="text" id="url" placeholder="www.example.com"/>
     <br/>
     <br/>
-    <!--<paper-input label="URL" id="url" placeholder="www.example.com" auto-validate
-                 error-message="Required" required hidden>
-    </paper-input>
--->
 
-    <!--<paper-input label="Advertised Tx Power" id="adv-tx-power-url" auto-validate maxLength="4"
-                 placeholder="-20"
-                 allowed-pattern="[-0-9]" pattern="(-100)|(-[1-9]?[0-9])|(1?[0-9])|(20)"
-                 required hidden>
-      <div suffix>dBm</div>
-    </paper-input>-->
     <label>Advertised Tx Power</label><input type="text" id="adv-tx-power-url" maxLength="4"/>
   </div>
 
 
 
   <div id="uid-fields">
-    <label>Instance</label><input type="text" id="namespace"  placeholder="123456789012deadbeef" maxLength="20"/>
-    <!--<paper-input label="Namespace" id="namespace" auto-validate allowed-pattern="[0-9a-f]"
-                 placeholder="123456789012deadbeef"
-                 required char-counter minLength="20" maxLength="20" hidden>
-    </paper-input>-->
-    <label>Instance</label><input type="text" id="instance"  placeholder="1234deadbeef" maxLength="12"/>
-  <!--  <paper-input label="Instance" id="instance" auto-validate allowed-pattern="[0-9a-f]"
-                 placeholder="1234deadbeef"
-                 required char-counter minLength="12" maxLength="12" hidden>
-    </paper-input>-->
-    <label>Instance</label><input type="text" id="adv-tx-power-uid" placeholder="-20" maxLength="12"/>
-  <!--  <paper-input label="Advertised Tx Power" id="adv-tx-power-uid" auto-validate maxLength="4"
-                 placeholder="-20"
-                 allowed-pattern="[-0-9]" pattern="(-100)|(-[1-9]?[0-9])|(1?[0-9])|(20)"
-                 required hidden>
-      <div suffix>dBm</div>
+    <label>Namespace</label><input type="text" id="namespace"  placeholder="123456789012deadbeef" maxLength="20"/>
+    <br/>
+    <br/>
 
-    </paper-input>-->
+    <label>Instance</label><input type="text" id="instance"  placeholder="1234deadbeef" maxLength="12"/>
+    <br/>
+    <br/>
+
+    <label>TX Power</label><input type="text" id="adv-tx-power-uid" placeholder="-20" maxLength="12"/>
+    <br/>
+    <br/>
 
   </div>
 
   <div id="buttons">
-<!--    <paper-button id="update-button" raised hidden>Update Advertisement</paper-button>
-    <paper-button id="stop-button" raised hidden>Stop Advertising</paper-button>-->
     <button id="update-button" >Update Advertisement</button>
     <button id="stop-button" >Stop Advertising</button>
   </div>
-
-  <!--<paper-toast id="result-toast" duration="0">
-    <paper-button id="close-toast">Close</paper-button>
-  </paper-toast>-->
 
   <script src="eddystone-advertising.js"></script>
   <script src="main.js"></script>

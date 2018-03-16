@@ -19,6 +19,8 @@
 
   // General
   let frame_type_dropdown = document.querySelector('#frame-type');
+  let url_fields = document.querySelector('#url-fields');
+  let uid_fields = document.querySelector('#uid-fields');
   // Eddystone URL
   let url_prefix_dropdown = document.querySelector('#url-prefix-dropdown');
   let url_prefix = document.querySelector('#url-prefix');
@@ -32,17 +34,14 @@
   let update_button = document.querySelector('#update-button');
   let stop_button = document.querySelector('#stop-button');
 
-  let result_toast = document.querySelector('#result-toast');
-  let close_toast_button = document.querySelector('#close-toast');
 
-  frame_type_dropdown.addEventListener('select', event => {
+  frame_type_dropdown.addEventListener('change', event => {
     switch (getFrameType()) {
       case 'url':
-        hideUIDFields();
         showURLFields();
         break;
       case 'uid':
-        hideURLFields();
+
         showUIDFields();
     }
   });
@@ -87,9 +86,6 @@
         });
     }
   });
-  /*close_toast_button.addEventListener('tap', () => {
-    result_toast.toggle();
-  });*/
 
   function getFrameType() {
     if (frame_type_dropdown.selectedIndex === 0) {
@@ -120,28 +116,12 @@
   }
 
   function showURLFields() {
-    adv_tx_power_url.hidden = false;
-    url_prefix_dropdown.hidden = false;
-    url_field.hidden = false;
-    update_button.hidden = false;
-    stop_button.hidden = false;
+    uid_fields.style.display = 'none';
+    url_fields.style.display = 'inline-block';
   }
   function showUIDFields() {
-    adv_tx_power_uid.hidden = false;
-    namespace_field.hidden = false;
-    instance_field.hidden = false;
-    update_button.hidden = false;
-    stop_button.hidden = false;
-  }
-  function hideURLFields() {
-    adv_tx_power_url.hidden = true;
-    url_prefix_dropdown.hidden = true;
-    url_field.hidden = true;
-  }
-  function hideUIDFields() {
-    adv_tx_power_uid.hidden = true;
-    namespace_field.hidden = true;
-    instance_field.hidden = true;
+    url_fields.style.display = 'none';
+    uid_fields.style.display = 'inline-block';
   }
 
   function updateAdvertisement(options) {
@@ -156,9 +136,6 @@
       .then(adv => current_advertisement = adv);
   }
   function showResult(message) {
-    /*result_toast.duration = 0;
-    result_toast.text = message;
-    result_toast.open();*/
     console.log("message", message)
   }
 })();
